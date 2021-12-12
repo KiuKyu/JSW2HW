@@ -55,7 +55,19 @@ function calc(){
         document.getElementById('pr4').innerHTML = 'B bình phương là: ' + Math.pow(document.getElementById('numB').value,2);
     }
 
-    // c. Tính thế kỷ
+    // c. Tính tổng số từ a ~ b
+    if (numA > numB){
+        document.getElementById('pr5').innerHTML = 'Số a đang lớn hơn số b';
+    }
+    else {
+        let sum = 0;
+        for (let i = numA; i <= numB; i++){
+            sum += i;
+        }
+        document.getElementById('pr5').innerHTML = 'Tổng dãy số từ a đến b là: ' + sum;
+    }
+
+    // d. Tính thế kỷ
     // let cHet = Math.floor(numA / 100);
     // let kHet = cHet + 1;
     // if (numA % 100 == 0){
@@ -66,25 +78,25 @@ function calc(){
 
     // Viết tắt
     if (numA % 100 == 0){
-        document.getElementById('pr5').innerHTML = 'Thế kỷ: ' + (Math.floor(numA / 100));
+        document.getElementById('pr6').innerHTML = 'Thế kỷ: ' + (Math.floor(numA / 100));
     }
     else {
-        document.getElementById('pr5').innerHTML = 'Thế kỷ: ' + (Math.floor(numA / 100) + 1);
+        document.getElementById('pr6').innerHTML = 'Thế kỷ: ' + (Math.floor(numA / 100) + 1);
     }
 
-    // d. Kiểm tra loại tam giác
+    // e. Kiểm tra loại tam giác
     if (numA + numB > numC && numB + numC > numA && numA + numC > numB){
         if (numA == numB && numB == numC){
-            document.getElementById('pr6').innerHTML = 'Tam giác đều';
+            document.getElementById('pr7').innerHTML = 'Tam giác đều';
         }
         else if (numA == numB || numB == numC || numC == numA){
-            document.getElementById('pr6').innerHTML = 'Tam giác cân';
+            document.getElementById('pr7').innerHTML = 'Tam giác cân';
         }
         else if (Math.pow(numA,2) == (Math.pow(numB,2) + Math.pow(numC,2)) || Math.pow(numB,2) == (Math.pow(numA,2) + Math.pow(numC,2)) || Math.pow(numC,2) == (Math.pow(numA,2) + Math.pow(numB,2))){
-            document.getElementById('pr6').innerHTML = 'Tam giác vuông';
+            document.getElementById('pr7').innerHTML = 'Tam giác vuông';
         }
         else {
-            document.getElementById('pr6').innerHTML = 'Tam giác nhọn';
+            document.getElementById('pr7').innerHTML = 'Tam giác nhọn';
         }
     }
     else {
